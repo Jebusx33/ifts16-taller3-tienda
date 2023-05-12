@@ -2,8 +2,11 @@
 
 
 INSTALAR
+
 NODE JS > 16
+
 TYPESCRIPT > npm install -g typescript
+
 ANGULAR > npm install -g @angular/cli
 
 
