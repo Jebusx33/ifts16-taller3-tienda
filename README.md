@@ -3,7 +3,7 @@
 
 //INSTALAR
 
-NODE JS > 16
+NODE JS > 18
 
 TYPESCRIPT > npm install -g typescript
 
