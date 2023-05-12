@@ -1,7 +1,7 @@
 # ifts16-taller3-tienda
 
 
-INSTALAR
+//INSTALAR
 
 NODE JS > 16
 
@@ -12,29 +12,42 @@ ANGULAR > npm install -g @angular/cli
 
 
 //clonar git
+
 git clone https://github.com/Jebusx33/ifts16-taller3-tienda.git
 
 //instalar las dependencias:
 
-/ifts16-taller3-tienda/back/ npm init  y  npm install -g         
+/ifts16-taller3-tienda/back/ npm init  y  npm install -g
+
 /ifts16-taller3-tienda/admin/  
+
 /ifts16-taller3-tienda/tienda/
 
 
 //Usuario y contraseña del admin y cliente creado 
+
 //admin 
-//USUARIO: test@admin.com
-//CONTRASEÑA: root
+
+USUARIO: test@admin.com
+
+CONTRASEÑA: root
+
 
 //cliente:
+
 USUARIO: test@cliente0.com
+
 CONTRASEÑA: 123456
+
 
 //EJECUTAR local
 //back:
+
 npm start
 
+
 //tienda y admin
+
 ng serve
 
 
