@@ -4,10 +4,12 @@ var app = express();
 var bodyparser = require('body-parser');
 var mongoose = require('mongoose');
 var port = process.env.Port || 4201;
-
+const cors =require('cors')
+const whiteList =['http://localhost:4200','http://localhost:4201']
 var admin_route = require('./routes/admin');
 var cliente_route = require('./routes/cliente');
 
+app.use(cors({ origin: whiteList }))
 
 //mongoose.connect('mongodb://127.0.0.1:27017/tienda',{useUnifiedTopology: true}, (err,res)=>{
 mongoose.connect('mongodb+srv://testTienda:JA4X37KWL2gO6WQn@tienda.xthlu27.mongodb.net/?retryWrites=true&w=majority', { useUnifiedTopology: true }, (err, res) => {
