@@ -3,7 +3,7 @@ var Admin = require('../models/admin');
 var bcrytp = require('bcrypt-nodejs');
 var jwt = require('../helpers/jwt');
 
-
+//Registro Admin
 const registro_admin = async function (req, res) {
     //
     //REGISTRO:
@@ -44,26 +44,26 @@ const registro_admin = async function (req, res) {
 //Login Admin
 const login_admin = async function (req, res) {
     var data = req.body;
-    //verifica si el coreo existe en la BD
+    //Verifica si el coreo existe en la BD
     var admin_arr = []
 
     admin_arr = await Admin.find({ email: data.email })//busca el mail del admin y lo encierrra en el array
 
     if (admin_arr.length == 0) {//si el array esta vacio no hay usuario registrado con el mail buscado
-        res.status(200).send({ message: 'No se encontro el email', data: undefined })
+        res.status(200).send({ message: 'No se encontro el email \n"mensaje desde el backend"', data: undefined })
     } else {
         //LOGIN
         let user = admin_arr[0];
-        //desencripta y verifica si la contraseña coincide con la BD
+        //Desencripta y verifica si la contraseña coincide con la BD
         bcrytp.compare(data.password, user.password, async function (error, check) {
             if (check) {
                 // console.log(user)
-                res.status(200).send({ 
+                res.status(200).send({
                     data: user,
                     token: jwt.createToken(user)
                 });
             } else {
-                res.status(200).send({ message: 'La contraseña no coincide', data: undefined });
+                res.status(200).send({ message: 'La contraseña no coincide \n"mensaje desde el backend"', data: undefined });
             }
         });
     }
@@ -72,5 +72,5 @@ const login_admin = async function (req, res) {
 
 module.exports = {
     registro_admin,
-    login_admin 
+    login_admin
 }
