@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { NgbPagination } from "@ng-bootstrap/ng-bootstrap";
 
 import { FormsModule } from '@angular/forms';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
@@ -11,6 +12,7 @@ import { routing } from './app.routing';
 import { InicioComponent } from './components/inicio/inicio.component';
 import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { LoginComponent } from './components/login/login.component';
+import { IndexClienteComponent } from './components/clientes/index-cliente/index-cliente.component';
 
 
 @NgModule({
@@ -18,7 +20,8 @@ import { LoginComponent } from './components/login/login.component';
     AppComponent,
     InicioComponent,
     SidebarComponent,
-    LoginComponent
+    LoginComponent,
+    IndexClienteComponent
   ],
   imports: [
     BrowserModule,
@@ -26,7 +29,8 @@ import { LoginComponent } from './components/login/login.component';
     FormsModule,
     HttpClientModule,
    // HttpClient,
-    routing   
+    routing,
+    NgbPagination   
   ],
   providers: [],
   bootstrap: [AppComponent]
