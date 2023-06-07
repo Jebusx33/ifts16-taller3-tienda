@@ -12,7 +12,9 @@ var ClienteSchema = Schema({
     perfil:{type:String, default:'perfil.png', required:true},
     telefono:{type:String, required:false},
     f_nacimiento:{type:String, required:false},
+    tipoDni:{type:String, required:false},
     dni:{type:String, required:false},
+    genero:{type:String, required:false},
 });
 
 module.exports = mongoose.model('cliente',ClienteSchema);
