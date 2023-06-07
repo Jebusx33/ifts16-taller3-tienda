@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { AdminService } from 'src/app/services/admin.service';
 import { ClienteService } from 'src/app/services/cliente.service';
 
 @Component({
@@ -11,14 +12,21 @@ export class IndexClienteComponent {
   public filtro_apellidos = "";
   public filtro_correo = "";
   public page = 1;
-  public pageSize = 1;
-  constructor(private _clienteService: ClienteService) { }
+  public pageSize = 10;
+  public token;
+
+  constructor(
+    private _clienteService: ClienteService,
+    private _AdminService: AdminService
+    ) { 
+      this.token = this._AdminService.getToken();
+    }
   ngOnInit(): void {
     this.init_Data();
   }
 
   init_Data() {
-    this._clienteService.listar_clientes_filtro_admin(null, null).subscribe(
+    this._clienteService.listar_clientes_filtro_admin(null, null, this.token ).subscribe(
       Response => {
         // console.log(Response)
         this.clientes = Response.data;
@@ -37,7 +45,7 @@ export class IndexClienteComponent {
 
     if (tipo == 'apellidos') {
       if (this.filtro_apellidos) {
-        this._clienteService.listar_clientes_filtro_admin(tipo, this.filtro_apellidos).subscribe(
+        this._clienteService.listar_clientes_filtro_admin(tipo, this.filtro_apellidos, this.token ).subscribe(
           Response => {
             // console.log(Response)
             this.clientes = Response.data;
@@ -52,7 +60,7 @@ export class IndexClienteComponent {
 
     } else if (tipo == 'correo') {
       if (this.filtro_correo) {
-        this._clienteService.listar_clientes_filtro_admin(tipo, this.filtro_correo).subscribe(
+        this._clienteService.listar_clientes_filtro_admin(tipo, this.filtro_correo, this.token ).subscribe(
           Response => {
             // console.log(Response)
             this.clientes = Response.data;
