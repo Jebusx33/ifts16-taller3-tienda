@@ -1,11 +1,11 @@
 import { Routes, RouterModule } from "@angular/router";
-import { ModuleWithProviders } from "@angular/core";
+import { ModuleWithProviders, createComponent } from "@angular/core";
 import { InicioComponent } from "./components/inicio/inicio.component";
 import { LoginComponent } from './components/login/login.component';
 import { AdminGuard } from "./guards/admin.guard";
 import { IndexClienteComponent } from "./components/clientes/index-cliente/index-cliente.component";
 import { CreateClienteComponent } from "./components/clientes/create-cliente/create-cliente.component";
-
+import { CreateCuponComponent } from "./components/cupones/create-cupon/create-cupon.component";
 
 
 const appRoute: Routes = [
@@ -15,9 +15,11 @@ const appRoute: Routes = [
     {
         path: 'panel', children: [
             { path: 'clientes', component: IndexClienteComponent, canActivate: [AdminGuard] },
-            { path: 'clientes/registro', component: CreateClienteComponent, canActivate: [AdminGuard] }
+            { path: 'clientes/registro', component: CreateClienteComponent, canActivate: [AdminGuard] },
+            { path: 'cupones/registro', component: CreateCuponComponent, canActivate: [AdminGuard] }
         ]
     },
+    
     { path: '', pathMatch: 'full', redirectTo: 'home' },
     { path: '**', pathMatch: 'full', redirectTo: 'home' }
 ];

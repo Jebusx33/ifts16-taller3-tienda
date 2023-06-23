@@ -1,0 +1,1 @@
+var cupon = require('../models/cupon');
