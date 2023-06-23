@@ -86,7 +86,7 @@ const listar_clientes_filtro_admin = async function (req, res) {
     let filtro = req.params['filtro'];
     /* let reg = await cliente.find();
      res.status(200).send({ data: reg });*/
-   // console.log(tipo);
+    // console.log(tipo);
     //si el valor es nulo o un strin null muestra todo
     if (req.user) {
         if (req.user.role == 'admin') {
@@ -136,19 +136,111 @@ const registro_cliente_admin = async function (req, res) {
         if (req.user.role == 'admin') {
             var data = req.body;
 
-            bcrytp.hash('123456',null,null, async function name(err,hash) {
+            bcrytp.hash('123456', null, null, async function name(err, hash) {
                 if (hash) {
                     data.password = hash;
                     let reg = await Cliente.create(data);
-                    res.status(200).send({data:reg});
+                    res.status(200).send({ data: reg });
                 } else {
                     res.status(200).send({
                         message: "Error en el servidor",
                         data: undefined
                     });
                 }
-            } );
+            });
+        } else {
+            res.status(500).send({
+                message: 'NoAccess'
+            });
         }
+    } else {
+        res.status(500).send({
+            message: 'NoAccess'
+        });
+    }
+}
+
+
+const obtener_cliente_admin = async function (req, res) {
+    if (req.user) {
+        if (req.user.role == 'admin') {
+
+            var id = req.params['id'];
+            //console.log(id);
+            try {//valida que la ruta y el id sean correctos
+                var reg = await Cliente.findById({ _id: id });
+
+                //envia los datos del cliente al front por id
+                res.status(200).send({ data: reg });
+                //  console.log(reg);
+            } catch (error) {
+                res.status(200).send({ data: undefined });
+
+            }
+
+        } else {
+            res.status(500).send({
+                message: 'NoAccess'
+            });
+            //   console.log("no encotro ID")
+        }
+    } else {
+        res.status(500).send({
+            message: 'NoAccess'
+        });
+    }
+}
+
+const actualizar_cliente_admin = async function (req, res) {
+    if (req.user) {
+        if (req.user.role == 'admin') {
+
+            var id = req.params['id'];
+            var data = req.body;
+            // console.log(id);
+            var reg = await Cliente.findByIdAndUpdate({ _id: id },
+                {
+                    nombres: data.nombres,
+                    apellidos: data.apellidos,
+                    pais: data.pais,
+                    email: data.mail,
+                    perfil: data.perfil,
+                    telefono: data.telefono,
+                    f_nacimiento: data.f_nacimiento,
+                    tipoDni: data.tipoDni,
+                    dni: data.dni,
+                    genero: data.genero
+                });
+            res.status(200).send({ data: reg });//envia los datos al front
+        } else {
+            res.status(500).send({
+                message: 'NoAccess'
+            });
+        }
+    } else {
+        res.status(500).send({
+            message: 'NoAccess'
+        });
+    }
+}
+
+
+const eliminar_cliente_admin = async function (req, res) {
+    if (req.user) {
+        if (req.user.role == 'admin') {
+
+            var id = req.params['id'];
+            let reg = await Cliente.findByIdAndRemove({ _id: id });
+            res.status(200).send({ data: reg });//envia los datos al front
+        } else {
+            res.status(500).send({
+                message: 'NoAccess'
+            });
+        }
+    } else {
+        res.status(500).send({
+            message: 'NoAccess'
+        });
     }
 }
 
@@ -157,5 +249,8 @@ module.exports = {
     registro_cliente,
     login_cliente,
     listar_clientes_filtro_admin,
-    registro_cliente_admin
+    registro_cliente_admin,
+    obtener_cliente_admin,
+    actualizar_cliente_admin,
+    eliminar_cliente_admin
 }

@@ -1,0 +1,277 @@
+{
+	"info": {
+		"_postman_id": "bbf74b70-0b89-4312-8024-9f8153c194b6",
+		"name": "TiendaTaller",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "19462500"
+	},
+	"item": [
+		{
+			"name": "RegistroCliente",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "nombres",
+							"value": "Cliente0",
+							"type": "text"
+						},
+						{
+							"key": "apellidos",
+							"value": "Test0",
+							"type": "text"
+						},
+						{
+							"key": "email",
+							"value": "test@cliente0.com",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "123456",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "localhost:4201/api/registro_cliente",
+					"host": [
+						"localhost"
+					],
+					"port": "4201",
+					"path": [
+						"api",
+						"registro_cliente"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "LoginCliente",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "email",
+							"value": "test@cliente0.com",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "123456",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "localhost:4201/api/login_cliente",
+					"host": [
+						"localhost"
+					],
+					"port": "4201",
+					"path": [
+						"api",
+						"login_cliente"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "RegistroAdmin",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "nombres",
+							"value": "Admin",
+							"type": "text"
+						},
+						{
+							"key": "apellidos",
+							"value": "Test0",
+							"type": "text"
+						},
+						{
+							"key": "email",
+							"value": "test@admin.com",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "root",
+							"type": "text"
+						},
+						{
+							"key": "telefono",
+							"value": "112345678",
+							"type": "text"
+						},
+						{
+							"key": "rol",
+							"value": "ADMIN",
+							"type": "text"
+						},
+						{
+							"key": "dni",
+							"value": "46787978789",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "localhost:4201/api/registro_admin",
+					"host": [
+						"localhost"
+					],
+					"port": "4201",
+					"path": [
+						"api",
+						"registro_admin"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "LoginAdmin",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "email",
+							"value": "test@admin.com",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "root",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "localhost:4201/api/login_admin",
+					"host": [
+						"localhost"
+					],
+					"port": "4201",
+					"path": [
+						"api",
+						"login_admin"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "LoginAdmin-Railway",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "email",
+							"value": "test@admin.com",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "root",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "ifts16-taller3-tiendaback-production.up.railway.app/api/login_admin",
+					"host": [
+						"ifts16-taller3-tiendaback-production",
+						"up",
+						"railway",
+						"app"
+					],
+					"path": [
+						"api",
+						"login_admin"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ListadoClienteToken",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI2NDYyM2RlNWIyZWQ5NzZmZTdjMzdiNDAiLCJhcGVsbGlkb3MiOiJUZXN0MCIsImVtYWlsIjoidGVzdEBhZG1pbi5jb20iLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE2ODQ3NjgyNjEsImV4cCI6MTY4NTM3MzA2MX0.fP9BOWwJn8OgTSIC7pLiz7-yIN8PmKn6xN8rSMrD7Rg",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "nombres",
+							"value": "jesus",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "apellidos",
+							"value": "Test0",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "email",
+							"value": "jesus@test0.com",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "password",
+							"value": "123456",
+							"type": "text",
+							"disabled": true
+						}
+					]
+				},
+				"url": {
+					"raw": "localhost:4201/api/listar_clientes_filtro_admin/null/null",
+					"host": [
+						"localhost"
+					],
+					"port": "4201",
+					"path": [
+						"api",
+						"listar_clientes_filtro_admin",
+						"null",
+						"null"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
