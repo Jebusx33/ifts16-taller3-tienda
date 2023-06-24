@@ -146,7 +146,7 @@ const registro_producto_admin = async function(req,res){
     }
 }
 
-listar_productos_admin = async function(req,res){
+const listar_productos_admin = async function(req,res){
     if(req.user){
         var productos = await Producto.find();
         res.status(200).send({data:productos});
@@ -155,7 +155,7 @@ listar_productos_admin = async function(req,res){
     } 
 }
 
-listar_variedades_productos_admin = async function(req,res){
+const listar_variedades_productos_admin = async function(req,res){
     if(req.user){
         var productos = await Variedad.find().populate('producto');
         res.status(200).send({data:productos});
@@ -342,5 +342,19 @@ const agregar_nueva_variedad_admin = async function(req,res){
 
 module.exports = {
     registro_admin,
-    login_admin
+    login_admin,
+    listar_productos_admin,
+    listar_variedades_productos_admin,
+    listar_variedades_productos_admin,
+    obtener_producto_admin,
+    listar_etiquetas_producto_admin,
+    eliminar_etiqueta_producto_admin,
+    agregar_etiqueta_producto_admin,
+    obtener_portada,
+    actualizar_producto_admin,
+    listar_variedades_productos_admin,
+    listar_variedades_admin,
+    actualizar_producto_variedades_admin,
+    eliminar_variedad_admin,
+    agregar_nueva_variedad_admin
 }

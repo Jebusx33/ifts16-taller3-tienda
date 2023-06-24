@@ -1,11 +1,15 @@
 'use strict'
+
 var express = require('express');
-var adminController = require('../controllers/AdminController');
+var AdminController = require('../controllers/AdminController');
 
 var api = express.Router();
+var auth = require('../middleware/authenticate');
+var multiparty = require('connect-multiparty');
+var path = multiparty({uploadDir: './uploads/productos'});
 
-api.post('/registro_admin', adminController.registro_admin);
-api.post('/login_admin', adminController.login_admin);
+api.post('/registro_admin', AdminController.registro_admin);
+api.post('/login_admin', AdminController.login_admin);
 
 api.post('/login_admin',AdminController.login_admin);
 api.get('/listar_etiquetas_admin',auth.auth,AdminController.listar_etiquetas_admin);

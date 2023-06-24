@@ -2,7 +2,6 @@
 var express = require('express');
 //const { registro_cliente } = require('../controllers/clienteController');
 var clienteController = require('../controllers/ClienteController')
-
 var api = express.Router();
 var auth = require('../middleware/authenticate');
 
