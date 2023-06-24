@@ -356,5 +356,9 @@ module.exports = {
     listar_variedades_admin,
     actualizar_producto_variedades_admin,
     eliminar_variedad_admin,
-    agregar_nueva_variedad_admin
+    agregar_nueva_variedad_admin,
+    listar_etiquetas_admin,
+    eliminar_etiqueta_admin,
+    agregar_etiqueta_admin,
+    registro_producto_admin
 }

@@ -6,8 +6,8 @@ var mongoose = require('mongoose');
 var port = process.env.Port || 4201;
 const cors =require('cors')
 const whiteList =['http://localhost:4200','http://localhost:4201']
-var admin_route = require('./routes/admin');
-var cliente_route = require('./routes/cliente');
+var admin_routes = require('./routes/admin');
+var cliente_routes = require('./routes/cliente');
 
 app.use(cors({ origin: whiteList }))
 
@@ -34,6 +34,6 @@ app.use((req, res, next) => {
     next();
 });
 
-app.use('/api', cliente_route);
-app.use('/api', admin_route);
+app.use('/api', cliente_routes);
+app.use('/api', admin_routes);
 module.exports = app;
