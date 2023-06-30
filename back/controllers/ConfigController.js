@@ -1,4 +1,4 @@
-
+'use strict'
 var config = require('../models/config');
 
 const actualiza_config_admin = async function(req,res){
@@ -9,8 +9,8 @@ const actualiza_config_admin = async function(req,res){
                 categorias: [],
                 titulo: 'Createx',
                 logo: 'logo.png',
-                serie: 0001,
-                correlativo: 0000001,
+                serie: '0001',
+                correlativo: '0000001',
             });
 
         }else{
