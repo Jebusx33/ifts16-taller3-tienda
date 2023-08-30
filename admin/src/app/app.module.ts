@@ -19,6 +19,7 @@ import { CreateClienteComponent } from './components/clientes/create-cliente/cre
 import { EditClienteComponent } from './components/clientes/edit-cliente/edit-cliente.component';
 
 import { CreateProductoComponent } from './components/productos/create-producto/create-producto.component';
+import { ConfigComponent } from './components/config/config.component';
 
 
 @NgModule({
@@ -30,7 +31,8 @@ import { CreateProductoComponent } from './components/productos/create-producto/
     IndexClienteComponent,
     CreateClienteComponent,
     EditClienteComponent,
-    CreateProductoComponent
+    CreateProductoComponent,
+    ConfigComponent
   ],
   imports: [
     BrowserModule,

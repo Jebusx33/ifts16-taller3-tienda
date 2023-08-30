@@ -9,6 +9,7 @@ import { CreateClienteComponent } from "./components/clientes/create-cliente/cre
 import { EditClienteComponent } from "./components/clientes/edit-cliente/edit-cliente.component";
 
 import { CreateProductoComponent } from "./components/productos/create-producto/create-producto.component";
+import { ConfigComponent } from "./components/config/config.component";
 
 
 
@@ -24,6 +25,8 @@ const appRoute: Routes = [
             { path: 'clientes/:id', component: EditClienteComponent, canActivate: [AdminGuard] },
 
             { path: 'productos/registro', component: CreateProductoComponent, canActivate: [AdminGuard] },
+
+            { path: 'configuraciones', component: ConfigComponent, canActivate: [AdminGuard] },
 
         ]
     },
