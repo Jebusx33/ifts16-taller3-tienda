@@ -30,12 +30,9 @@ import { CreateProductoComponent } from './components/productos/create-producto/
     LoginComponent,
     IndexClienteComponent,
     CreateClienteComponent,
-<<<<<<< HEAD
-    CreateCuponComponent
-=======
     EditClienteComponent,
-    CreateProductoComponent
->>>>>>> 3dee132c888086f5fce2ae5fe5b9e2ed498562a2
+    CreateProductoComponent,
+    CreateCuponComponent
   ],
   imports: [
     BrowserModule,

@@ -1,9 +1,15 @@
+
 import { Component, OnInit } from '@angular/core';
-declare var iziToast;
+import { CuponService } from 'src/app/services/cupon.service';
+import { AdminService } from 'src/app/services/admin.service';
+import { Router } from '@angular/router';
+
+declare var iziToast: any;
+
 
 @Component({
   selector: 'app-create-cupon',
-  templateUrl: './create-cupon.component.html',
+  templateUrl:'./create-cupon.component.html',
   styleUrls: ['./create-cupon.component.css']
 })
 export class CreateCuponComponent implements OnInit {
@@ -17,7 +23,7 @@ export class CreateCuponComponent implements OnInit {
   ngOnInit (): void{
 
   }
-  registro(registroForm){
+  registro(registroForm:any){
     if(registroForm.valid){
       console.log(this.cupon);
 
