@@ -15,6 +15,7 @@ import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { LoginComponent } from './components/login/login.component';
 import { IndexClienteComponent } from './components/clientes/index-cliente/index-cliente.component';
 import { CreateClienteComponent } from './components/clientes/create-cliente/create-cliente.component';
+import { CreateCuponComponent } from './components/cupones/create-cupon/create-cupon.component';
 
 import { EditClienteComponent } from './components/clientes/edit-cliente/edit-cliente.component';
 
@@ -32,7 +33,11 @@ import { ConfigComponent } from './components/config/config.component';
     CreateClienteComponent,
     EditClienteComponent,
     CreateProductoComponent,
+
+    CreateCuponComponent
+
     ConfigComponent
+
   ],
   imports: [
     BrowserModule,
