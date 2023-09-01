@@ -8,12 +8,19 @@ const cors = require('cors')
 const whiteList = ['http://localhost:4200', 'http://localhost:4201']
 var admin_route = require('./routes/admin');
 var cliente_route = require('./routes/cliente');
+
+var cupon_route = require('./routes/cupon');
+
 var config_route = require('./routes/config');
 
-app.use(cors({ origin: whiteList }))
 
-//mongoose.connect('mongodb://127.0.0.1:27017/tienda',{useUnifiedTopology: true}, (err,res)=>{
-mongoose.connect('mongodb+srv://testTienda:JA4X37KWL2gO6WQn@tienda.xthlu27.mongodb.net/?retryWrites=true&w=majority', { useUnifiedTopology: true }, (err, res) => {
+app.use(cors({ origin: whiteList }));
+
+mongoose.set('strictQuery', false); // Colocar aquí
+
+//mongoose.connect('mongodb+srv://testTienda:JA4X37KWL2gO6WQn@tienda.xthlu27.mongodb.net/?retryWrites=true&w=majority', { useUnifiedTopology: true }, (err, res) => {
+mongoose.connect('mongodb+srv://maxi:JA4X37KWL2gO6WQn@tienda.nbjhw7a.mongodb.net/?retryWrites=true&w=majority', { useUnifiedTopology: true }, (err, res) => {
+
     if (err) {
         console.log(err);
     } else {
@@ -24,7 +31,6 @@ mongoose.connect('mongodb+srv://testTienda:JA4X37KWL2gO6WQn@tienda.xthlu27.mongo
     }
 });
 
-app.use(bodyparser.urlencoded({ extended: true }));
 app.use(bodyparser.json({ limt: '50mb', extended: true }));
 
 app.use((req, res, next) => {
@@ -37,5 +43,10 @@ app.use((req, res, next) => {
 
 app.use('/api', cliente_route);
 app.use('/api', admin_route);
+
+app.use('/api', cupon_route);
+module.exports = app;
+
 app.use('/api', config_route);
 module.exports = app;
+
