@@ -20,6 +20,7 @@ import { CreateCuponComponent } from './components/cupones/create-cupon/create-c
 import { EditClienteComponent } from './components/clientes/edit-cliente/edit-cliente.component';
 
 import { CreateProductoComponent } from './components/productos/create-producto/create-producto.component';
+import { ConfigComponent } from './components/config/config.component';
 
 
 @NgModule({
@@ -32,7 +33,11 @@ import { CreateProductoComponent } from './components/productos/create-producto/
     CreateClienteComponent,
     EditClienteComponent,
     CreateProductoComponent,
+
     CreateCuponComponent
+
+    ConfigComponent
+
   ],
   imports: [
     BrowserModule,

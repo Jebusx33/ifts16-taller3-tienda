@@ -9,6 +9,7 @@ import { CreateClienteComponent } from "./components/clientes/create-cliente/cre
 import { EditClienteComponent } from "./components/clientes/edit-cliente/edit-cliente.component";
 
 import { CreateProductoComponent } from "./components/productos/create-producto/create-producto.component";
+import { ConfigComponent } from "./components/config/config.component";
 
 import { CreateCuponComponent } from "./components/cupones/create-cupon/create-cupon.component";
 
@@ -26,6 +27,8 @@ const appRoute: Routes = [
             { path: 'productos/registro', component: CreateProductoComponent, canActivate: [AdminGuard] },
             { path: 'cupones/registro', component: CreateCuponComponent, canActivate: [AdminGuard] },
 
+
+            { path: 'configuraciones', component: ConfigComponent, canActivate: [AdminGuard] },
 
         ]
     },
