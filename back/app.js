@@ -5,21 +5,23 @@ var bodyparser = require('body-parser');
 var mongoose = require('mongoose');
 var port = process.env.Port || 4201;
 
-const cors =require('cors')
-const whiteList =['http://localhost:4200','http://localhost:4201']
+const cors = require('cors')
+const whiteList = ['http://localhost:4200', 'http://localhost:4201']
 var admin_routes = require('./routes/admin');
 var cliente_routes = require('./routes/cliente');
+var producto_routes = require('./routes/producto');
 
 
 app.use(cors({ origin: whiteList }))
 
-//mongoose.connect('mongodb://127.0.0.1:27017/tienda',{useUnifiedTopology: true}, (err,res)=>{
-mongoose.connect('mongodb+srv://testTienda:JA4X37KWL2gO6WQn@tienda.xthlu27.mongodb.net/?retryWrites=true&w=majority', { useUnifiedTopology: true }, (err, res) => {
+//mongoose.connect('mongodb://127.0.0.1:27017/tienda', { useUnifiedTopology: true }, (err, res) => {
+mongoose.connect('mongodb+srv://esteban:JA4X37KWL2gO6WQn@tienda.x2y8zuw.mongodb.net/?retryWrites=true&w=majority', { useUnifiedTopology: true }, (err, res) => {
+    //mongoose.connect('mongodb+srv://testTienda:JA4X37KWL2gO6WQn@tienda.xthlu27.mongodb.net/?retryWrites=true&w=majority', { useUnifiedTopology: true }, (err, res) => {
     if (err) {
         console.log(err);
     } else {
 
-        app.listen(port, function () {
+        app.listen(port, function() {
             console.log("\n**** servidor corriendo en ==> http://localhost:" + port + " ****** \n");
         });
     }
@@ -38,4 +40,5 @@ app.use((req, res, next) => {
 
 app.use('/api', cliente_routes);
 app.use('/api', admin_routes);
+app.use('/api', producto_routes);
 module.exports = app;

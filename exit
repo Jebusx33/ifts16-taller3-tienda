@@ -1,0 +1,143 @@
+[33mcommit 233d83e758ec1cb95a41e47c0683109936ef02b3[m[33m ([m[1;36mHEAD -> [m[1;32mesteban[m[33m, [m[1;31morigin/esteban[m[33m)[m
+Author: estebanferrari86 <estebanalejandroferrari@gmail.com>
+Date:   Mon Jun 12 23:42:09 2023 -0300
+
+    Registro de producto y subida de imagen a backend
+
+[33mcommit d09d6b3422bdac576b942f7cec13d53993a8c49c[m[33m ([m[1;32mmaster[m[33m)[m
+Author: estebanferrari86 <estebanalejandroferrari@gmail.com>
+Date:   Mon Jun 12 23:17:00 2023 -0300
+
+    Carga Producto inicial
+
+[33mcommit d40d45435025775d4dd31abce2bddc40d102a943[m[33m ([m[1;31morigin/master[m[33m, [m[1;31morigin/HEAD[m[33m)[m
+Merge: 47b9c833 d9d83b96
+Author: Jesús Arias <40777283+Jebusx33@users.noreply.github.com>
+Date:   Wed Jun 7 04:12:10 2023 -0300
+
+    Merge pull request #6 from Jebusx33/jesus
+    
+    Registrar un cliente, panel administrador y backend
+
+[33mcommit d9d83b96b7799e2063823fd1ec0bd8957399a79c[m[33m ([m[1;31morigin/jesus[m[33m)[m
+Author: Jesus <gabrielj82@gmail.com>
+Date:   Wed Jun 7 04:09:46 2023 -0300
+
+    Registrar un cliente, panel administrador y backend
+
+[33mcommit 47b9c8334c866b0227d7aa2dda03f072e9788e5b[m[33m ([m[1;31morigin/cristian[m[33m)[m
+Merge: ff96c70c 864a5a63
+Author: Jesús Arias <40777283+Jebusx33@users.noreply.github.com>
+Date:   Wed May 24 23:07:06 2023 -0300
+
+    Merge pull request #5 from Jebusx33/jesus
+    
+    Listar, filtrar y paginar clientes, panel administrador
+
+[33mcommit 864a5a63c3e085e3eb1cff16cee926e20a35d1c9[m
+Author: Jesus <gabrielj82@gmail.com>
+Date:   Wed May 24 23:04:48 2023 -0300
+
+    Listar, filtrar y paginar clientes, panel administrador
+
+[33mcommit ff96c70c4fe7a2b656d3e78972f0166cdf664a84[m
+Merge: d93c0e94 3a4f14a9
+Author: Jesús Arias <40777283+Jebusx33@users.noreply.github.com>
+Date:   Mon May 15 12:22:03 2023 -0300
+
+    Merge pull request #4 from Jebusx33/jesus
+    
+    Jesus
+
+[33mcommit 3a4f14a9be38c743bd64b53189ad8d6ecd06f074[m
+Author: Jesus <gabrielj82@gmail.com>
+Date:   Mon May 15 12:19:50 2023 -0300
+
+    Proteccion de componentes con guards, panel administrador
+
+[33mcommit c28fb20d07636bee679435ba7d9231037a24cab4[m
+Author: Jesus <gabrielj82@gmail.com>
+Date:   Mon May 15 11:42:58 2023 -0300
+
+    Proteccion de componentes con guards, panel administrador
+
+[33mcommit d93c0e94c8273000d9047e775afafd1854ed92cc[m
+Author: Jesús Arias <40777283+Jebusx33@users.noreply.github.com>
+Date:   Fri May 12 15:36:13 2023 -0300
+
+    Update README.md
+
+[33mcommit 8e98a73cf03b036e474e1ed63a10fdc2540e68b5[m
+Author: Jesús Arias <40777283+Jebusx33@users.noreply.github.com>
+Date:   Fri May 12 13:41:53 2023 -0300
+
+    Update README.md
+
+[33mcommit e0d92dc159de41e256c8e49fc7a649aa31cc413e[m
+Author: Jesús Arias <40777283+Jebusx33@users.noreply.github.com>
+Date:   Fri May 12 13:40:09 2023 -0300
+
+    Update README.md
+
+[33mcommit 16d63078ce4955d8d3013313b9fc9d1bd7d9f3f0[m
+Author: Jesús Arias <40777283+Jebusx33@users.noreply.github.com>
+Date:   Fri May 12 13:37:27 2023 -0300
+
+    Update README.md
+
+[33mcommit 3b04ad5b4c3b86d0d529019843a5bda3656941b2[m
+Author: Jesús Arias <40777283+Jebusx33@users.noreply.github.com>
+Date:   Fri May 12 13:36:34 2023 -0300
+
+    Create README.md
+
+[33mcommit 742cddcd173e6b8d418dc6ea128c11e472d9f4fa[m
+Merge: 991d3d48 a70e93c0
+Author: Jesús Arias <40777283+Jebusx33@users.noreply.github.com>
+Date:   Fri May 12 12:54:13 2023 -0300
+
+    Merge pull request #3 from Jebusx33/jesus
+    
+    Inicio de sesión en angular, panel administrador
+
+[33mcommit a70e93c080be59ab900333eb5e92a8d530c18245[m
+Author: Jesus <gabrielj82@gmail.com>
+Date:   Fri May 12 12:47:03 2023 -0300
+
+    Inicio de sesión en angular, panel administrador
+
+[33mcommit 991d3d48b41cb058c3e98efb220cb9ae0b707f48[m
+Merge: 995ca2d1 dd964638
+Author: Jesús Arias <40777283+Jebusx33@users.noreply.github.com>
+Date:   Sun May 7 18:41:06 2023 -0300
+
+    Merge pull request #2 from Jebusx33/jesus
+    
+    inicio tiemda configuracion Angular
+
+[33mcommit dd964638d236a8a0960c863f12b81a0a60ccdadb[m
+Author: Jesus <gabrielj82@gmail.com>
+Date:   Sun May 7 18:32:15 2023 -0300
+
+    inicio tiemda configuracion Angular
+
+[33mcommit 995ca2d1092f9b525500803e65cd6c954cf42ba8[m
+Merge: 9aaa3aab 396105dc
+Author: Jesús Arias <40777283+Jebusx33@users.noreply.github.com>
+Date:   Wed May 3 20:36:02 2023 -0300
+
+    Merge pull request #1 from Jebusx33/jesus
+    
+    models, routes, controller de  admin y cliente
+
+[33mcommit 396105dc81d391e19eedcf84034d0875bd5c0879[m
+Author: Jesus <gabrielj82@gmail.com>
+Date:   Wed May 3 20:30:57 2023 -0300
+
+    models, routes, controller de  admin y cliente
+
+[33mcommit 9aaa3aab12505e361bb51cb16d58d7f80fba9c6b[m[33m ([m[1;31morigin/maxi[m[33m, [m[1;31morigin/cintia[m[33m)[m
+Author: Jesus <gabrielj82@gmail.com>
+Date:   Wed May 3 18:51:24 2023 -0300
+
+    inicio de proyecto tienda
