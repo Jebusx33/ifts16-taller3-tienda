@@ -10,6 +10,9 @@ const whiteList = ['http://localhost:4200', 'http://localhost:4201']
 var admin_routes = require('./routes/admin');
 var cliente_routes = require('./routes/cliente');
 var producto_routes = require('./routes/producto');
+var cupon_route = require('./routes/cupon');
+var config_route = require('./routes/config');
+
 
 
 app.use(cors({ origin: whiteList }))
@@ -41,4 +44,14 @@ app.use((req, res, next) => {
 app.use('/api', cliente_routes);
 app.use('/api', admin_routes);
 app.use('/api', producto_routes);
+app.use('/api', cupon_route);
+app.use('/api', config_route);
 module.exports = app;
+//app.use('/api', cliente_route);
+//app.use('/api', admin_route);
+
+//app.use('/api', cupon_route);
+//module.exports = app;
+
+//app.use('/api', config_route);
+//module.exports = app;
