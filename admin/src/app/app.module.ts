@@ -37,9 +37,9 @@ import { InventarioProductoComponent } from './components/productos/inventario-p
     EditClienteComponent,
     CreateProductoComponent,
 
-    CreateCuponComponent
+    CreateCuponComponent,
 
-    ConfigComponent
+    ConfigComponent,
 
     CreateProductoComponent,
     IndexProductoComponent,

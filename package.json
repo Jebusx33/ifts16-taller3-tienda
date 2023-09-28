@@ -18,5 +18,8 @@
   "homepage": "https://github.com/Jebusx33/ifts16-taller3-tienda#readme",
   "dependencies": {
     "mongoose": "^7.2.2"
+  },
+  "devDependencies": {
+    "@types/uuid": "^9.0.4"
   }
 }

@@ -18,8 +18,8 @@ var config_route = require('./routes/config');
 app.use(cors({ origin: whiteList }))
 
 //mongoose.connect('mongodb://127.0.0.1:27017/tienda', { useUnifiedTopology: true }, (err, res) => {
-mongoose.connect('mongodb+srv://esteban:JA4X37KWL2gO6WQn@tienda.x2y8zuw.mongodb.net/?retryWrites=true&w=majority', { useUnifiedTopology: true }, (err, res) => {
-    //mongoose.connect('mongodb+srv://testTienda:JA4X37KWL2gO6WQn@tienda.xthlu27.mongodb.net/?retryWrites=true&w=majority', { useUnifiedTopology: true }, (err, res) => {
+//mongoose.connect('mongodb+srv://esteban:JA4X37KWL2gO6WQn@tienda.x2y8zuw.mongodb.net/?retryWrites=true&w=majority', { useUnifiedTopology: true }, (err, res) => {
+mongoose.connect('mongodb+srv://cintia:JA4X37KWL2gO6WQn@tienda.rugou8x.mongodb.net/?retryWrites=true&w=majority', { useUnifiedTopology: true }, (err, res) => {
     if (err) {
         console.log(err);
     } else {
@@ -47,11 +47,3 @@ app.use('/api', producto_routes);
 app.use('/api', cupon_route);
 app.use('/api', config_route);
 module.exports = app;
-//app.use('/api', cliente_route);
-//app.use('/api', admin_route);
-
-//app.use('/api', cupon_route);
-//module.exports = app;
-
-//app.use('/api', config_route);
-//module.exports = app;
