@@ -1,6 +1,6 @@
 'use strict'
 var express = require('express');
-var productoController = require('../controllers/productoController');
+var productoController = require('../controllers/ProductoController');
 
 var api = express.Router();
 var auth = require('../middleware/authenticate');
