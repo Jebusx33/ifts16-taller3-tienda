@@ -4,6 +4,7 @@ import { Router } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { AdminGuard } from '../../../guards/admin.guard';
 import { CreateClienteComponent } from '../../clientes/create-cliente/create-cliente.component';
+import { ProductoService } from 'src/app/services/producto.service';
 
 declare var jQuery: any;
 declare var $: any;
@@ -22,14 +23,20 @@ export class CreateProductoComponent implements OnInit {
     visibilidad: ''
   };
   public file : File | undefined;
+  public token;
+  public load_btn = false;
   // public config : any = {};
 
-  constructor()
+  constructor(
+    private _productoService : ProductoService,
+    private _adminService : AdminService,
+    private _router:Router)
    {
 
   //   this.config = {
   //     height: 500
   //   }
+  this.token = _adminService.getToken();
    }
 
   ngOnInit(): void { 
@@ -99,6 +106,40 @@ export class CreateProductoComponent implements OnInit {
   registro(registroForm : any){
     if(registroForm.valid){
 
+      if(this.file == undefined){
+        iziToast.show({
+          title: 'ERROR',
+            titleColor: '#FF0000',
+            color: '#FFF',
+            class: 'text-danger',
+            position: 'topRight',
+            message: 'Debe subir una portada para registrar'
+        });
+      }else{
+        console.log(this.producto);
+        console.log(this.file);
+        this.load_btn = true;
+        this._productoService.registro_producto_admin(this.producto,this.file,this.token).subscribe(
+          response=>{
+            iziToast.show({
+                title: 'SUCCESS',
+                titleColor: '#1DC74C',
+                color: '#FFF',
+                class: 'text-success',
+                position: 'topRight',
+                message: 'Se registro correctamente el nuevo producto.'
+            });
+            this.load_btn = false;
+
+            this._router.navigate(['/panel/productos']);
+          },
+          error=>{
+            console.log(error);
+            this.load_btn = false;
+          }
+        );
+      }
+
     }else{
       iziToast.show({
         title: 'ERROR',
@@ -108,6 +149,7 @@ export class CreateProductoComponent implements OnInit {
         position: 'topCenter',
         message:'Los datos ingresados no son validos o faltan datos a completar'
       });
+      this.load_btn = false;
     }
 }
 }

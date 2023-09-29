@@ -6,7 +6,7 @@ const admin = require('../models/admin');
 const cliente = require('../models/cliente');
 
 //Registro Cliente
-const registro_cliente = async function (req, res) {
+const registro_cliente = async function(req, res) {
     //
     var data = req.body;
     var cliente_arr = [];
@@ -15,7 +15,7 @@ const registro_cliente = async function (req, res) {
         //valida y encripta contraseña usando bcrypt
         if (data.password) {
             //encripta contraseña
-            bcrytp.hash(data.password, null, null, async function (err, hash) {
+            bcrytp.hash(data.password, null, null, async function(err, hash) {
                 if (hash) { //si la contraseña esta encriptada
                     console.log(hash)
                     data.password = hash; //nuevo valor de la contraseña encriptada
@@ -45,14 +45,14 @@ const registro_cliente = async function (req, res) {
 }
 
 //Login Cliente
-const login_cliente = async function (req, res) {
+const login_cliente = async function(req, res) {
     var data = req.body;
     //verifica si el coreo existe en la BD
     var cliente_arr = []
 
     cliente_arr = await Cliente.find({
-        email: data.email
-    }) //busca el mail del cliente y lo encierrra en el array
+            email: data.email
+        }) //busca el mail del cliente y lo encierrra en el array
 
     if (cliente_arr.length == 0) { //si el array esta vacio no hay usuario registrado con el mail buscado
         res.status(200).send({
@@ -63,7 +63,7 @@ const login_cliente = async function (req, res) {
         //LOGIN
         let user = cliente_arr[0];
         //desencripta y verifica si la contraseña coincide con la BD
-        bcrytp.compare(data.password, user.password, async function (error, check) {
+        bcrytp.compare(data.password, user.password, async function(error, check) {
             if (check) {
                 // console.log(user)
                 res.status(200).send({
@@ -81,7 +81,7 @@ const login_cliente = async function (req, res) {
 }
 
 //CRUD Cliente
-const listar_clientes_filtro_admin = async function (req, res) {
+const listar_clientes_filtro_admin = async function(req, res) {
     let tipo = req.params['tipo'];
     let filtro = req.params['filtro'];
     /* let reg = await cliente.find();
@@ -131,7 +131,7 @@ const listar_clientes_filtro_admin = async function (req, res) {
 }
 
 
-const registro_cliente_admin = async function (req, res) {
+const registro_cliente_admin = async function(req, res) {
     if (req.user) {
         if (req.user.role == 'admin') {
             var data = req.body;
@@ -161,13 +161,13 @@ const registro_cliente_admin = async function (req, res) {
 }
 
 
-const obtener_cliente_admin = async function (req, res) {
+const obtener_cliente_admin = async function(req, res) {
     if (req.user) {
         if (req.user.role == 'admin') {
 
             var id = req.params['id'];
             //console.log(id);
-            try {//valida que la ruta y el id sean correctos
+            try { //valida que la ruta y el id sean correctos
                 var reg = await Cliente.findById({ _id: id });
 
                 //envia los datos del cliente al front por id
@@ -191,27 +191,26 @@ const obtener_cliente_admin = async function (req, res) {
     }
 }
 
-const actualizar_cliente_admin = async function (req, res) {
+const actualizar_cliente_admin = async function(req, res) {
     if (req.user) {
         if (req.user.role == 'admin') {
 
             var id = req.params['id'];
             var data = req.body;
             // console.log(id);
-            var reg = await Cliente.findByIdAndUpdate({ _id: id },
-                {
-                    nombres: data.nombres,
-                    apellidos: data.apellidos,
-                    pais: data.pais,
-                    email: data.mail,
-                    perfil: data.perfil,
-                    telefono: data.telefono,
-                    f_nacimiento: data.f_nacimiento,
-                    tipoDni: data.tipoDni,
-                    dni: data.dni,
-                    genero: data.genero
-                });
-            res.status(200).send({ data: reg });//envia los datos al front
+            var reg = await Cliente.findByIdAndUpdate({ _id: id }, {
+                nombres: data.nombres,
+                apellidos: data.apellidos,
+                pais: data.pais,
+                email: data.mail,
+                perfil: data.perfil,
+                telefono: data.telefono,
+                f_nacimiento: data.f_nacimiento,
+                tipoDni: data.tipoDni,
+                dni: data.dni,
+                genero: data.genero
+            });
+            res.status(200).send({ data: reg }); //envia los datos al front
         } else {
             res.status(500).send({
                 message: 'NoAccess'
@@ -225,13 +224,13 @@ const actualizar_cliente_admin = async function (req, res) {
 }
 
 
-const eliminar_cliente_admin = async function (req, res) {
+const eliminar_cliente_admin = async function(req, res) {
     if (req.user) {
         if (req.user.role == 'admin') {
 
             var id = req.params['id'];
             let reg = await Cliente.findByIdAndRemove({ _id: id });
-            res.status(200).send({ data: reg });//envia los datos al front
+            res.status(200).send({ data: reg }); //envia los datos al front
         } else {
             res.status(500).send({
                 message: 'NoAccess'

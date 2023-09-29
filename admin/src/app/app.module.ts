@@ -21,6 +21,9 @@ import { EditClienteComponent } from './components/clientes/edit-cliente/edit-cl
 
 import { CreateProductoComponent } from './components/productos/create-producto/create-producto.component';
 import { ConfigComponent } from './components/config/config.component';
+import { IndexProductoComponent } from './components/productos/index-producto/index-producto.component';
+import { UpdateProductoComponent } from './components/productos/update-producto/update-producto.component';
+import { InventarioProductoComponent } from './components/productos/inventario-producto/inventario-producto.component';
 
 
 @NgModule({
@@ -34,10 +37,14 @@ import { ConfigComponent } from './components/config/config.component';
     EditClienteComponent,
     CreateProductoComponent,
 
-    CreateCuponComponent
+    CreateCuponComponent,
 
-    ConfigComponent
+    ConfigComponent,
 
+    CreateProductoComponent,
+    IndexProductoComponent,
+    UpdateProductoComponent,
+    InventarioProductoComponent
   ],
   imports: [
     BrowserModule,

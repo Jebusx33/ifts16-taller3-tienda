@@ -10,6 +10,9 @@ import { EditClienteComponent } from "./components/clientes/edit-cliente/edit-cl
 
 import { CreateProductoComponent } from "./components/productos/create-producto/create-producto.component";
 import { ConfigComponent } from "./components/config/config.component";
+import { IndexProductoComponent } from "./components/productos/index-producto/index-producto.component";
+import { UpdateProductoComponent } from "./components/productos/update-producto/update-producto.component";
+import { InventarioProductoComponent } from "./components/productos/inventario-producto/inventario-producto.component";
 
 import { CreateCuponComponent } from "./components/cupones/create-cupon/create-cupon.component";
 
@@ -29,6 +32,10 @@ const appRoute: Routes = [
 
 
             { path: 'configuraciones', component: ConfigComponent, canActivate: [AdminGuard] },
+            { path: 'productos', component: IndexProductoComponent, canActivate: [AdminGuard] },
+            { path: 'productos/:id', component: UpdateProductoComponent, canActivate: [AdminGuard]},
+            { path: 'productos/inventario/:id', component: InventarioProductoComponent, canActivate: [AdminGuard]},
+
 
         ]
     },
