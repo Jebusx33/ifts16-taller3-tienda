@@ -14,6 +14,7 @@ api.get('/obtener_producto_admin/:id', auth.auth, productoController.obtener_pro
 api.delete('/eliminar_producto_admin/:id', auth.auth, productoController.eliminar_producto_admin);
 api.get('/listar_productos_admin/:filtro?', auth.auth, productoController.listar_productos_admin);
 api.get('/listar_variedades_productos_admin', auth.auth, productoController.listar_variedades_productos_admin);
+api.put('/actualizar_producto_variedades_admin/:id',auth.auth,productoController.actualizar_producto_variedades_admin);
 
 //INVENTARIO
 api.get('/listar_inventario_producto_admin/:id', auth.auth, productoController.listar_inventario_producto_admin);

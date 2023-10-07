@@ -13,7 +13,7 @@ import { ConfigComponent } from "./components/config/config.component";
 import { IndexProductoComponent } from "./components/productos/index-producto/index-producto.component";
 import { UpdateProductoComponent } from "./components/productos/update-producto/update-producto.component";
 import { InventarioProductoComponent } from "./components/productos/inventario-producto/inventario-producto.component";
-
+import { VariedadProductoComponent } from "./components/productos/variedad-producto/variedad-producto.component";
 import { CreateCuponComponent } from "./components/cupones/create-cupon/create-cupon.component";
 
 
@@ -35,8 +35,7 @@ const appRoute: Routes = [
             { path: 'productos', component: IndexProductoComponent, canActivate: [AdminGuard] },
             { path: 'productos/:id', component: UpdateProductoComponent, canActivate: [AdminGuard]},
             { path: 'productos/inventario/:id', component: InventarioProductoComponent, canActivate: [AdminGuard]},
-
-
+            { path: 'productos/variedades/:id', component: VariedadProductoComponent, canActivate: [AdminGuard]},
         ]
     },
     { path: 'login', component: LoginComponent },
