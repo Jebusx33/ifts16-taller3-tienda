@@ -25,6 +25,7 @@ import { IndexProductoComponent } from './components/productos/index-producto/in
 import { UpdateProductoComponent } from './components/productos/update-producto/update-producto.component';
 import { InventarioProductoComponent } from './components/productos/inventario-producto/inventario-producto.component';
 import { VariedadProductoComponent } from './components/productos/variedad-producto/variedad-producto.component';
+import { GaleriaProductoComponent } from './components/productos/galeria-producto/galeria-producto.component';
 
 
 @NgModule({
@@ -46,7 +47,8 @@ import { VariedadProductoComponent } from './components/productos/variedad-produ
     IndexProductoComponent,
     UpdateProductoComponent,
     InventarioProductoComponent,
-    VariedadProductoComponent
+    VariedadProductoComponent,
+    GaleriaProductoComponent
   ],
   imports: [
     BrowserModule,
