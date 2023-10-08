@@ -24,6 +24,8 @@ import { ConfigComponent } from './components/config/config.component';
 import { IndexProductoComponent } from './components/productos/index-producto/index-producto.component';
 import { UpdateProductoComponent } from './components/productos/update-producto/update-producto.component';
 import { InventarioProductoComponent } from './components/productos/inventario-producto/inventario-producto.component';
+import { VariedadProductoComponent } from './components/productos/variedad-producto/variedad-producto.component';
+import { GaleriaProductoComponent } from './components/productos/galeria-producto/galeria-producto.component';
 
 
 @NgModule({
@@ -44,7 +46,9 @@ import { InventarioProductoComponent } from './components/productos/inventario-p
     CreateProductoComponent,
     IndexProductoComponent,
     UpdateProductoComponent,
-    InventarioProductoComponent
+    InventarioProductoComponent,
+    VariedadProductoComponent,
+    GaleriaProductoComponent
   ],
   imports: [
     BrowserModule,
