@@ -10,6 +10,9 @@ import { AppComponent } from './app.component';
 import { InicioComponent } from './components/inicio/inicio.component';
 import { NavComponent } from './components/nav/nav.component';
 import { FooterComponent } from './components/footer/footer.component';
+import { LoginComponent } from './components/login/login.component';
+import { PerfilComponent } from './components/usuario/perfil/perfil.component';
+import { SiderbarComponent } from './components/usuario/siderbar/siderbar.component';
 
 
 @NgModule({
@@ -18,6 +21,9 @@ import { FooterComponent } from './components/footer/footer.component';
     InicioComponent,
     NavComponent,
     FooterComponent,
+    LoginComponent,
+    PerfilComponent,
+    SiderbarComponent,
   ],
   imports: [
     BrowserModule,
