@@ -64,7 +64,7 @@ git checkout nombre
 
 hacer pull
 
-git pull
+git pull origin desarrollo
 
 
 //subir:subir una vez terminado el modulo o seccion *** Preguntar antes de hacer un commit ***!!
@@ -74,4 +74,5 @@ git git add *
 commit -m "sarasa"
 
 git push origin nomb
+
 https://drive.google.com/drive/folders/15sEeHlNRybVsVUVR7kbAncvO0VkAII3t?usp=sharing
