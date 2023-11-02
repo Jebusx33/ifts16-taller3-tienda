@@ -6,23 +6,26 @@ var mongoose = require('mongoose');
 var port = process.env.Port || 4201;
 
 const cors = require('cors')
-const whiteList = ['http://localhost:4200', 'http://localhost:4201']
+const whiteList = ['http://localhost:4200', 'http://localhost:4201', 'http://localhost:14185']
 var admin_routes = require('./routes/admin');
 var cliente_routes = require('./routes/cliente');
 var producto_routes = require('./routes/producto');
 var cupon_route = require('./routes/cupon');
 var config_route = require('./routes/config');
+//var carrito_route = require('./routes/carrito');
+//var venta_route = require('./routes/venta');
+//var descuento_route = require('./routes/descuento');
 
 
 
 app.use(cors({ origin: whiteList }))
-//mongoose.connect('mongodb://127.0.0.1:27017/tienda', { useUnifiedTopology: true }, (err, res) => {
-//mongoose.connect('mongodb+srv://esteban:JA4X37KWL2gO6WQn@tienda.x2y8zuw.mongodb.net/?retryWrites=true&w=majority', { useUnifiedTopology: true }, (err, res) => {
-//mongoose.connect('mongodb+srv://cristian:JA4X37KWL2gO6WQn@tienda.upao0pk.mongodb.net/?retryWrites=true&w=majority', { useUnifiedTopology: true }, (err, res) => {
-//mongoose.connect('mongodb+srv://cintia:JA4X37KWL2gO6WQn@tienda.rugou8x.mongodb.net/?retryWrites=true&w=majority', { useUnifiedTopology: true }, (err, res) => {
-//mongoose.connect('mongodb+srv://maxi:JA4X37KWL2gO6WQn@tienda.nbjhw7a.mongodb.net/?retryWrites=true&w=majority', { useUnifiedTopology: true }, (err, res) => {   
-mongoose.connect('mongodb+srv://jesus:JA4X37KWL2gO6WQn@tienda.lfc0qtf.mongodb.net/?retryWrites=true&w=majority', { useUnifiedTopology: true }, (err, res) => {
-if (err) {
+    //mongoose.connect('mongodb://127.0.0.1:27017/tienda', { useUnifiedTopology: true }, (err, res) => {
+    //mongoose.connect('mongodb+srv://esteban:JA4X37KWL2gO6WQn@tienda.x2y8zuw.mongodb.net/?retryWrites=true&w=majority', { useUnifiedTopology: true }, (err, res) => {
+    //mongoose.connect('mongodb+srv://cristian:JA4X37KWL2gO6WQn@tienda.upao0pk.mongodb.net/?retryWrites=true&w=majority', { useUnifiedTopology: true }, (err, res) => {
+mongoose.connect('mongodb+srv://cintia:JA4X37KWL2gO6WQn@tienda.rugou8x.mongodb.net/?retryWrites=true&w=majority', { useUnifiedTopology: true }, (err, res) => {
+    //mongoose.connect('mongodb+srv://maxi:JA4X37KWL2gO6WQn@tienda.nbjhw7a.mongodb.net/?retryWrites=true&w=majority', { useUnifiedTopology: true }, (err, res) => {   
+    //mongoose.connect('mongodb+srv://jesus:JA4X37KWL2gO6WQn@tienda.lfc0qtf.mongodb.net/?retryWrites=true&w=majority', { useUnifiedTopology: true }, (err, res) => {
+    if (err) {
         console.log(err);
     } else {
 
@@ -48,4 +51,7 @@ app.use('/api', admin_routes);
 app.use('/api', producto_routes);
 app.use('/api', cupon_route);
 app.use('/api', config_route);
+//app.use('/api', carrito_route);
+//app.use('/api', venta_route);
+//app.use('/api', descuento_route);
 module.exports = app;

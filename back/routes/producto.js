@@ -14,13 +14,23 @@ api.get('/obtener_producto_admin/:id', auth.auth, productoController.obtener_pro
 api.delete('/eliminar_producto_admin/:id', auth.auth, productoController.eliminar_producto_admin);
 api.get('/listar_productos_admin/:filtro?', auth.auth, productoController.listar_productos_admin);
 api.get('/listar_variedades_productos_admin', auth.auth, productoController.listar_variedades_productos_admin);
-api.put('/actualizar_producto_variedades_admin/:id',auth.auth,productoController.actualizar_producto_variedades_admin);
-api.put('/agregar_imagen_galeria_admin/:id',[auth.auth,path],productoController.agregar_imagen_galeria_admin);
-api.put('/eliminar_imagen_galeria_admin/:id',auth.auth,productoController.eliminar_imagen_galeria_admin);
+api.put('/actualizar_producto_variedades_admin/:id', auth.auth, productoController.actualizar_producto_variedades_admin);
+api.put('/agregar_imagen_galeria_admin/:id', [auth.auth, path], productoController.agregar_imagen_galeria_admin);
+api.put('/eliminar_imagen_galeria_admin/:id', auth.auth, productoController.eliminar_imagen_galeria_admin);
 
 //INVENTARIO
 api.get('/listar_inventario_producto_admin/:id', auth.auth, productoController.listar_inventario_producto_admin);
 api.delete('/eliminar_inventario_producto_admin/:id', auth.auth, productoController.eliminar_inventario_producto_admin);
 api.post('/registro_inventario_producto_admin', auth.auth, productoController.registro_inventario_producto_admin);
+
+//PUBLICOS
+api.get('/listar_productos_publico/:filtro?', productoController.listar_productos_publico);
+api.get('/obtener_productos_slug_publico/:slug', productoController.obtener_productos_slug_publico);
+api.get('/listar_productos_recomendados_publico/:categoria', productoController.listar_productos_recomendados_publico);
+
+api.get('/listar_productos_nuevos_publico', productoController.listar_productos_nuevos_publico);
+api.get('/listar_productos_masvendidos_publico', productoController.listar_productos_masvendidos_publico);
+//api.get('/obtener_reviews_producto_publico/:id', productoController.obtener_reviews_producto_publico);
+
 
 module.exports = api;
