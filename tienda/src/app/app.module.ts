@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
+//import { NgbModule,NgbPagination } from "@ng-bootstrap/ng-bootstrap";
 import { FormsModule } from '@angular/forms';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 
@@ -13,6 +13,8 @@ import { FooterComponent } from './components/footer/footer.component';
 import { LoginComponent } from './components/login/login.component';
 import { PerfilComponent } from './components/usuario/perfil/perfil.component';
 import { SiderbarComponent } from './components/usuario/siderbar/siderbar.component';
+import { IndexProductoComponent } from './components/productos/index-producto/index-producto.component';
+import { ShowProductoComponent } from './components/productos/show-producto/show-producto.component';
 
 
 @NgModule({
@@ -24,12 +26,15 @@ import { SiderbarComponent } from './components/usuario/siderbar/siderbar.compon
     LoginComponent,
     PerfilComponent,
     SiderbarComponent,
+    IndexProductoComponent,
+    ShowProductoComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
+    //NgbPagination,
     routing 
   ],
   providers: [],

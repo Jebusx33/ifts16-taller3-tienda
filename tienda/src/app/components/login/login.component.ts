@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { ClienteService } from 'src/app/services/cliente.service';
 declare var jQuery: any;
@@ -9,7 +9,7 @@ declare var iziToast: any;
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css']
 })
-export class LoginComponent {
+export class LoginComponent implements OnInit  {
 
   public user: any = {};
   public usuario: any = {};
@@ -24,6 +24,10 @@ export class LoginComponent {
     if (this.token) {
       this._router.navigate(['/']);
     }
+  }
+
+  ngOnInit(): void {
+
   }
 
   login(loginForm: any) {
