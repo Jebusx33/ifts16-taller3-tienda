@@ -8,6 +8,7 @@ import { AuthGuard } from "./guards/auth.guard";
 
 import { IndexProductoComponent } from "./components/productos/index-producto/index-producto.component";
 import { ShowProductoComponent } from "./components/productos/show-producto/show-producto.component";
+import { CarritoComponent } from "./components/carrito/carrito.component";
 /*import { CarritoComponent } from "./components/carrito/carrito.component";
 import { DireccionesComponent } from "./components/usuario/direcciones/direcciones.component";
 import { ContactoComponent } from "./components/contacto/contacto.component";
@@ -21,19 +22,17 @@ const appRoute : Routes =[
     {path:'', pathMatch:'full', redirectTo:'home' },
     {path:'**', pathMatch:'full', redirectTo:'home' },
     {path: 'login', component: LoginComponent},
-
     {path: 'cuenta/perfil', component: PerfilComponent, canActivate: [AuthGuard]},
+    {path: 'productos', component: IndexProductoComponent},
+    {path: 'productos/categoria/:categoria', component: IndexProductoComponent},
+    {path: 'productos/:slug', component: ShowProductoComponent},
+    {path: 'carrito', component: CarritoComponent, canActivate: [AuthGuard]},
+    //{path: 'carrito', component: CarritoComponent, canActivate: [AuthGuard]},
     /*{path: 'cuenta/direcciones', component: DireccionesComponent, canActivate: [AuthGuard]},
     {path: 'cuenta/ordenes', component: IndexOrdenesComponent, canActivate: [AuthGuard]},
     {path: 'cuenta/ordenes/:id', component: DetalleOrdenComponent, canActivate: [AuthGuard]},
     {path: 'cuenta/perfil', component: PerfilComponent, canActivate: [AuthGuard]},
-    {path: 'cuenta/reviews', component: IndexReviewComponent, canActivate: [AuthGuard]},
-
-    {path: 'carrito', component: CarritoComponent, canActivate: [AuthGuard]},*/
-
-    {path: 'productos', component: IndexProductoComponent},
-    {path: 'productos/categoria/:categoria', component: IndexProductoComponent},
-    {path: 'productos/:slug', component: ShowProductoComponent},
+    {path: 'cuenta/reviews', component: IndexReviewComponent, canActivate: [AuthGuard]},*/
  //{path: 'contacto', component: ContactoComponent},*/
 ];
 
