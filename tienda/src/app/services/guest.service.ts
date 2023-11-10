@@ -52,13 +52,11 @@ export class GuestService {
   }
 
 
-  get_Regiones():Observable<any>{
-    return this._http.get('./assets/regiones.json');
+
+  get_Localidades():Observable<any>{
+    return this._http.get('./assets/localidades.json');
   }
-  get_Distritos():Observable<any>{
-    return this._http.get('./assets/distritos.json');
-  }
-  get_Procincias():Observable<any>{
+  get_Provincias():Observable<any>{
     return this._http.get('./assets/provincias.json');
   }
 
