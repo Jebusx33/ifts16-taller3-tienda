@@ -16,6 +16,7 @@ import { SiderbarComponent } from './components/usuario/siderbar/siderbar.compon
 import { IndexProductoComponent } from './components/productos/index-producto/index-producto.component';
 import { ShowProductoComponent } from './components/productos/show-producto/show-producto.component';
 import { DireccionesComponent } from './components/usuario/direcciones/direcciones.component';
+import { ContactoComponent } from './components/contacto/contacto.component';
 
 
 @NgModule({
@@ -30,6 +31,7 @@ import { DireccionesComponent } from './components/usuario/direcciones/direccion
     IndexProductoComponent,
     ShowProductoComponent,
     DireccionesComponent,
+    ContactoComponent,
   ],
   imports: [
     BrowserModule,
