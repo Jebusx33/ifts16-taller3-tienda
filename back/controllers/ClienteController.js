@@ -4,6 +4,7 @@ var bcrytp = require('bcrypt-nodejs')
 var jwt = require('../helpers/jwt');
 const admin = require('../models/admin');
 const cliente = require('../models/cliente');
+const Contacto = require('../models/contacto');
 
 //Registro Cliente
 const registro_cliente = async function(req, res) {
@@ -38,7 +39,7 @@ const registro_cliente = async function(req, res) {
         }
     } else {
         res.status(200).send({
-            message: 'el correo ya existe en la base de datos \n"mensaje desde el backend"',
+            message: 'el email ya existe en la base de datos \n"mensaje desde el backend"',
             data: undefined
         });
     }
@@ -105,7 +106,7 @@ const listar_clientes_filtro_admin = async function(req, res) {
                     res.status(200).send({
                         data: reg
                     });
-                } else if (tipo == 'correo') {
+                } else if (tipo == 'email') {
                     let reg = await Cliente.find({
                         email: new RegExp(filtro, 'i')
                     });
@@ -425,6 +426,7 @@ const enviar_mensaje_contacto  = async function(req,res){
     res.status(200).send({data:reg});
 
 }
+
 
 /**REVIEWS */
 const emitir_review_producto_cliente  = async function(req,res){
