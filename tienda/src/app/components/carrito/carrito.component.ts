@@ -1,9 +1,10 @@
-import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+
 import { ClienteService } from 'src/app/services/cliente.service';
 import { GLOBAL } from 'src/app/services/GLOBAL';
 import { io } from "socket.io-client";
 import { GuestService } from 'src/app/services/guest.service';
 import { Router } from '@angular/router';
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 declare var iziToast : any;
 declare var Cleave : any;
 declare var StickySidebar : any;
@@ -19,7 +20,7 @@ interface HtmlInputEvent extends Event{
   styleUrls: ['./carrito.component.css']
 })
 export class CarritoComponent implements OnInit {
-  @ViewChild('paypalButton',{static:true}) paypalElement : any;
+  @ViewChild('paypalButton', { static: true })paypalElement: ElementRef | any;
   public idcliente;
   public token;
 
@@ -55,8 +56,7 @@ export class CarritoComponent implements OnInit {
     this.idcliente = localStorage.getItem('_id');
     this.venta.cliente = this.idcliente;
     this.token = localStorage.getItem('token');
-    this.url =GLOBAL.url;
-    
+    this.url =GLOBAL.url;    
 
     this._guestService.get_Envios().subscribe(
       response=>{
