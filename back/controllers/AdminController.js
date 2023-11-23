@@ -5,7 +5,7 @@ var jwt = require('../helpers/jwt');
 var Etiqueta = require('../models/Etiqueta');
 var Producto = require('../models/Producto');
 var Producto_etiqueta = require('../models/Producto_etiqueta');
-var Carrito = require('../models/Carrito');
+var Carrito = require('../models/carrito');
 var fs = require('fs');
 var path = require('path');
 

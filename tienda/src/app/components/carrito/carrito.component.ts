@@ -212,8 +212,13 @@ export class CarritoComponent implements OnInit {
             message: 'Se eliminó el producto correctamente.'
         });
         this.socket.emit('delete-carrito',{data:response.data});
-        this.init_Data();
-        
+        //this.init_Data();
+        this._clienteService.obtener_carrito_cliente(this.idcliente, this.token).subscribe(
+          response=>{
+            this.carrito_arr = response.data;
+            this.calcular_carrito();
+          }
+        )
       }
     );
   }

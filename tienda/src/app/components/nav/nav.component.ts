@@ -66,13 +66,13 @@ export class NavComponent  implements OnInit {
         }
       );
     }
-    
+
     
 
     
   }
 
-  obtener_carrito(){
+  obtener_carrito() : any {
     this._clienteService.obtener_carrito_cliente(this.user_lc._id,this.token).subscribe(
       response=>{
         this.carrito_arr = response.data;
@@ -82,15 +82,8 @@ export class NavComponent  implements OnInit {
   }
 
   ngOnInit(): void {
-    this.socket.on('new-carrito',function(data:any){
-      console.log(data);
-     //obtener_carrito();
-    }.bind(this));
-
-    this.socket.on('new-carrito-add',function(data:any){
-      console.log(data);
-      //this.obtener_carrito();
-    }.bind(this));
+    this.socket.on('new-carrito',this.obtener_carrito().bind(this));
+    this.socket.on('new-carrito-add',this.obtener_carrito().bind(this));
 
     this._guestService.obtener_descuento_activo().subscribe(
       response=>{
