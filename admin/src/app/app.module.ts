@@ -26,6 +26,9 @@ import { UpdateProductoComponent } from './components/productos/update-producto/
 import { InventarioProductoComponent } from './components/productos/inventario-producto/inventario-producto.component';
 import { VariedadProductoComponent } from './components/productos/variedad-producto/variedad-producto.component';
 import { GaleriaProductoComponent } from './components/productos/galeria-producto/galeria-producto.component';
+import { IndexDescuentoComponent } from './components/descuento/index-descuento/index-descuento.component';
+import { EditDescuentoComponent } from './components/descuento/edit-descuento/edit-descuento.component';
+import { CreateDescuentoComponent } from './components/descuento/create-descuento/create-descuento.component';
 
 
 @NgModule({
@@ -48,7 +51,10 @@ import { GaleriaProductoComponent } from './components/productos/galeria-product
     UpdateProductoComponent,
     InventarioProductoComponent,
     VariedadProductoComponent,
-    GaleriaProductoComponent
+    GaleriaProductoComponent,
+    IndexDescuentoComponent,
+    EditDescuentoComponent,
+    CreateDescuentoComponent
   ],
   imports: [
     BrowserModule,
