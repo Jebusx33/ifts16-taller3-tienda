@@ -56,7 +56,7 @@ export class CarritoComponent implements OnInit {
     this.idcliente = localStorage.getItem('_id');
     this.venta.cliente = this.idcliente;
     this.token = localStorage.getItem('token');
-    this.url =GLOBAL.url;    
+    this.url =GLOBAL.url;
 
     this._guestService.get_Envios().subscribe(
       response=>{
