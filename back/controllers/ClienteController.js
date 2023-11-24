@@ -5,6 +5,7 @@ var jwt = require('../helpers/jwt');
 const admin = require('../models/admin');
 const cliente = require('../models/cliente');
 const Contacto = require('../models/contacto');
+const Direccion = require('../models/direccion');
 
 //Registro Cliente
 const registro_cliente = async function(req, res) {

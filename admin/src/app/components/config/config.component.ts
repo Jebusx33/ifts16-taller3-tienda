@@ -22,10 +22,6 @@ export class ConfigComponent implements OnInit{
   public file : any = null;
   public imgSelect : any | ArrayBuffer;
 
-  private random(){
-    return Math.floor((Math.random() * 100000000) + 1);
-  }
-
   constructor(
     private _adminService: AdminService
     ){
