@@ -84,20 +84,7 @@
                     </div>
 
                 </div>
-                <div class="form-group row align-items-center">
-                    <label class="col-md-3 col-form-label font-weight-medium" for="file-input">Logo</label>
-                    <div class="col-md-9">
-                        <div class="cs-file-drop-area">
-                            <div class="cs-file-drop-preview img-thumbnail rounded" *ngIf="file||imgSelect">
-                                <img [src]="file||imgSelect" alt="Vista previa de imagen">
-                            </div>
-                            <div class="cs-file-drop-icon cxi-upload"></div>
-                            <span class="cs-file-drop-message">Arrastre y suelte aqui para subir imagen</span>
-                            <input type="file" name="logo" class="cs-file-drop-input" (change)="fileChangeEvent($event)">
-                            <button type="button" class="cs-file-drop-btn btn btn-outline-primary btn-sm">Seleccionar imagen</button>
-                        </div>
-                    </div>
-                </div>
+                
             </div>
 
         </div>

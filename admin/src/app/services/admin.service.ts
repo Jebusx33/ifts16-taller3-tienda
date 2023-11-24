@@ -56,7 +56,7 @@ export class AdminService {
     return allowRoles.includes(decodedToken['role']);
   }
 
-  actualiza_config_admin(data: any, id: any ,token: any):Observable<any>{
+  actualiza_config_admin(id: any ,data: any, token: any):Observable<any>{
     if(data.logo){
       let headers = new HttpHeaders({'Authorization':token});
 
